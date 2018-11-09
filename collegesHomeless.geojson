@@ -1,0 +1,12 @@
+{
+"type": "FeatureCollection",
+"name": "collegesHomeless",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+"features": [
+{ "type": "Feature", "properties": { "College": "Pierce College", "Tot_Studen": 20335, "Homeless_S": 3843, "PerHomeles": 0.19, "PrePerHome": "19%", "Lat": 34.184536, "Long": -118.575697, "orig_ogc_fid": 0 }, "geometry": { "type": "Point", "coordinates": [ -118.575697, 34.184536 ] } },
+{ "type": "Feature", "properties": { "College": "L.A. Valley College", "Tot_Studen": 17844, "Homeless_S": 3105, "PerHomeles": 0.17, "PrePerHome": "17%", "Lat": 34.175328, "Long": -118.421669, "orig_ogc_fid": 2 }, "geometry": { "type": "Point", "coordinates": [ -118.421669, 34.175328 ] } },
+{ "type": "Feature", "properties": { "College": "L.A. City College", "Tot_Studen": 16367, "Homeless_S": 3290, "PerHomeles": 0.2, "PrePerHome": "20%", "Lat": 34.087296, "Long": -118.292665, "orig_ogc_fid": 3 }, "geometry": { "type": "Point", "coordinates": [ -118.292665, 34.087296 ] } },
+{ "type": "Feature", "properties": { "College": "L.A. Trade-Tech College", "Tot_Studen": 13892, "Homeless_S": 3501, "PerHomeles": 0.25, "PrePerHome": "25%", "Lat": 34.032857, "Long": -118.269684, "orig_ogc_fid": 4 }, "geometry": { "type": "Point", "coordinates": [ -118.269684, 34.032857 ] } },
+{ "type": "Feature", "properties": { "College": "L.A. Harbor College", "Tot_Studen": 9157, "Homeless_S": 1731, "PerHomeles": 0.19, "PrePerHome": "19%", "Lat": 33.784127, "Long": -118.284035, "orig_ogc_fid": 8 }, "geometry": { "type": "Point", "coordinates": [ -118.284035, 33.784127 ] } }
+]
+}
