@@ -12,26 +12,25 @@
 
         <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800" rel="stylesheet"> 
         <link rel="apple-touch-icon" href="apple-touch-icon.png">
-        <link rel="stylesheet" href="css/bootstrap.min.css">
-        <link rel="stylesheet" href="css/bootstrap-theme.min.css">
-        <link rel="stylesheet" href="css/fontAwesome.css">
-        <link rel="stylesheet" href="css/hero-slider.css">
-        <link rel="stylesheet" href="css/tooplate-style.css">
         <link rel="stylesheet" href="https://npmcdn.com/leaflet@1.0.0-rc.2/dist/leaflet.css" />
-
+        <link rel="stylesheet" href="style.css">
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
         <script src="https://npmcdn.com/leaflet@1.0.0-rc.2/dist/leaflet.js"></script>
         <script src="js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>  
-
+</head>
 <body>
-		<div id="map" style="width: 600px; height: 600px"></div>
+    <div id = "info"> 
+      <h2 style>Los Angeles Parcels Eligible for Backyard Home <h2></div>
+		<div id="map" style="width: 800px; height: 800px"></div>
+
 
 		<script>
-  		  var map = L.map('map',{ center: [34.087595, -118.292820], zoom: 12});
+  		  var map = L.map('map',{ center: [34.15, -118.40], zoom: 11});
 
-  		  L.tileLayer('http://{s}.tiles.wmflabs.org/bw-mapnik/{z}/{x}/{y}.png', { attribution: '© OpenStreetMap' }).addTo(map);
+  		  L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/Canvas/World_Light_Gray_Base/MapServer/tile/{z}/{y}/{x}', { attribution: '© OpenStreetMap' }).addTo(map);
 
-   			  $.getJSON("grid.geojson",function(zips){
+   			  $.getJSON("aduGrid.geojson",function(zips){
   				L.geoJson(zips, {
 				    style: function(feature){
 				      var fillColor,
@@ -50,12 +49,12 @@
   					}  ).addTo(map);
 				}); 
 
-   			    $.getJSON("collegesHomeless.geojson",function(data){
+   			    $.getJSON("colleges.geojson",function(data){
     			// add GeoJSON layer to the map once the file is loaded
    				 L.geoJson(data, {
 
 				    onEachFeature: function( feature, layer ){
-				      layer.bindPopup( "<strong>" + "College:" + " " + feature.properties.College + "</strong><br/>" + feature.properties.PrePerHome+ " of students are homeless" )
+				      layer.bindPopup( "<strong>" + feature.properties.College + "</strong><br/>" + feature.properties.PrePerHome+ " of students are homeless" )
 				    }
   					}  ).addTo(map);
   				});
@@ -63,5 +62,16 @@
 
 		</script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+    <div id = "info" width = 800px> 
+      <h3> 1 out  of 5 Community College Students in Los Angeles is Homeless </h3> </div>
+    <div id = "info-text">
+      <p style>In an effort to ease the current housing crises, the city of Los Angeles recently adopted ordinances to simplify the permitting and building of Accessory Dwelling Units, (ADUs, aso known as Backyard Homes or Granny Flats) on parcels zoned for single-family homes. 
+<p>The organization Our Backyard Homes (OBH) is looking to utilize these ordinances to provide housing scholarships for L.A. Community College students to live in an ADU.  </p>
+<p>With 75% of residential land in Los Angeles zoned for parcels, there is immense potential for building Backyard Homes. </p>
+<p> Learn more about Our Backyard Homes student housing scholarship program at <a href="https://www.ourbackyardhomes.org/">ourbackyardhomes.org</a> </p>
+
+</div>
+
 </body>
 </html>
